@@ -11,9 +11,29 @@ function sayMyName(){
 // sayMyName()    // by adding the parenthesis after the function name it will call out the function and execute the value in itself
                   // wihtout parenthesis it wont return any value
 
-function addTwoNumbers(number1, number2){
-    console.log(number1 + number2);
-}                
+// function addTwoNumbers(number1, number2){        
+//     console.log(number1 + number2);
+// }                
 
-// addTwoNumbers()  //this will not execute anything as theres no arguement given
-   addTwoNumbers(3, 4)   //this will add these two args now
+// // addTwoNumbers()  //this will not execute anything as theres no arguement given
+//    addTwoNumbers(3, 4)   //this will add these two args now
+
+
+// function addTwoNumbers(number1, number2){
+
+//     // let result = number1 + number2
+//     // return result              
+//     return number1 + number2        //alternate way to return the same function  
+// }
+
+
+function loginUserMessage(username = "sam"){
+    if(!username){                             //this means that if no username is there then it is undefined
+        console.log("PLease enter a username");
+        return
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage("hitesh"))
