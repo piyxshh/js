@@ -16,6 +16,14 @@
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
     const xhr = new XMLHttpRequest();  //XMLHttprequest is used to send or receive any data
     xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){    //holds the interval at which request is being sent
+        console.log(xhr.readyState);        //prints the interval
+        if (xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)     //this.responseText is a string by default hence it will print undefined for followers
+            console.log(typeof data);                      //JSON.parse converts this string to object as it is a JSON object
+            console.log(data.followers);
+        }
+    }
     xhr.send()
 </script>    
 </html>
