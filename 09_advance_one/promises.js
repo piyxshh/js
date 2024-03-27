@@ -27,17 +27,33 @@
 
 
 //
-const promiseThree = new Promise(function(resolve, reject){
-    setTimeout(function(){
-        resolve({username: "chai", email: "chai@example.com"})  //we can also inject info inside the paramters of resolve
-    })
-}, 1000)
+// const promiseThree = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         resolve({username: "chai", email: "chai@example.com"})  //we can also inject info inside the paramters of resolve
+//     })
+// }, 1000)
 
-promiseThree.then(function(user){
-    console.log(user);           //.then again connects to resolve and prints the paramter inside when a function is called
-})
+// promiseThree.then(function(user){
+//     console.log(user);           //.then again connects to resolve and prints the paramter inside when a function is called
+// })
 
 
 
 //
-const promiseFour = new Promisef(fucntio(resolve, reject)
+const promiseFour = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true
+        if (!error) {
+            resolve({username: "hitesh", password: "123"})
+        } else {
+            reject('ERROR: Something went wrong')
+        }
+    }, 1000) 
+}).then((username) => {
+    console.log(username);
+}).catch(function(error){   //.catch is used to connect with reject 
+    console.log(error);      
+}).finally(() => console.log("The promise is either resolved or rejected"))
+
+//since error is true hence resolve function wont work and .then is wont either
+//only .catch will work with reject
